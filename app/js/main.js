@@ -93,7 +93,7 @@ $(function() {
     nextArrow: '<img class="slide-arrows slide-arrows_right" src="img/arrow-right.svg">'
   });
 
-  /* стилизация input type number */
+  /* stylization input type number */
   $('<div class="quantity-nav"><div class="quantity-button quantity-up"><img src="img/plus.svg" alt="Plus"></div><div class="quantity-button quantity-down"><img src="img/minus.svg" alt="Minus"></div></div>').insertAfter('.quantity input');
   $('.quantity').each(function() {
     var spinner = $(this),
@@ -127,26 +127,26 @@ $(function() {
 
   });
 
- /* формула подсчёта ночей и гостей работает  для всех слайдов*/
+ /* formula for calculating the total amount depending on the number of guests and nights*/
   $('.quantity-button').on('click', function(){
     let parents = $(this).parents('.holder-slider__info');
     let summ = $('.summ', parents).data('nights') * $('.nights', parents).val() + $('.summ', parents).data('guests') * $('.guests', parents).val();
     $('.summ', parents).html('$' + summ);
   });
   
- /*  здесь рассчитывает сумму с исходными значениями ! */
+ /* here it calculates the sum with the original values */
   $('.quantity').each(function() {
     let parents = $(this).parents('.holder-slider__info');
     let summ = $('.summ', parents).data('nights') * $('.nights', parents).val() + $('.summ', parents).data('guests') * $('.guests', parents).val();
     $('.summ', parents).html('$' + summ);
   });
 
-  /* кнопка +/- для доски серфинга */
+  /* +/- button for the surfboard */
   $('.surfboard-box__circle').on('click', function() {
     $(this).toggleClass('active');
   });
 
-  /* бургер меню */
+  /* burger menu*/
   $('.menu-btn').on('click', function() {
     $('.menu').toggleClass('active');
   });
